@@ -26,4 +26,8 @@ namespace MarsRover{
         }
     }
 
+    interface IOnPlateau{
+        public Plateau Plateau {get; set;}
+    }
+
 }

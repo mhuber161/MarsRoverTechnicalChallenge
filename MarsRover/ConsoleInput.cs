@@ -1,11 +1,9 @@
 using System;
 
-namespace MarsRover{
-    
+namespace MarsRover{    
     //Contains method for a console app to run
     //App accepts user-specified file as input
     class MarsRoverConsole{
-
         static int Main(string[] args){
 
             for(int i = 0; i < args.Length; i++){
@@ -40,5 +38,6 @@ namespace MarsRover{
             Console.WriteLine("No input specified, run with --help for instructions");
             return 1;
         }
+
     }
 }

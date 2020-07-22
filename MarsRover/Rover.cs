@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace MarsRover
 {
@@ -12,7 +11,7 @@ namespace MarsRover
 
         private Direction direction;    //Current direction the rover is facing
 
-        private Plateau plateau;    //Plateau the rover is on
+        public Plateau plateau;    //Plateau the rover is on
 
         public Rover(){
             xPos = 0;
@@ -31,8 +30,8 @@ namespace MarsRover
 
         //returns string representation of current rover position and direction
         //should be called after rover received all commands
-        public string GetRoverStatsString(){
-            return xPos + " " + yPos + " " + DirectionHelper.DirectionToString(direction);
+        public override string ToString(){
+            return xPos + " " + yPos + " " + DirectionStringConverter.EnumToString(direction);
         }
 
         //The turn left command turns the rover 90 degrees counterclockwise
@@ -89,7 +88,7 @@ namespace MarsRover
             }
 
             if(yPos > plateau.GetYMax() || yPos < 0 || xPos > plateau.GetXMax() || xPos < 0){
-                Debug.WriteLine("Rover is out of bounds, current position: x = " + xPos + ", y = " + yPos);
+                LogManager.LogDebug("Rover is out of bounds, current position: x = " + xPos + ", y = " + yPos);
                 throw new Exception("Rover is out of bounds, current position: x = " + xPos + ", y = " + yPos);
             }
         }

@@ -12,8 +12,8 @@ namespace MarsRover{
         West
     }
 
-    public static class DirectionHelper{
-        public static Direction StringToDirection(string s){
+    public static class DirectionStringConverter{
+        public static Direction StringToEnum(string s){
             switch(s){
                 case "N":
                     return Direction.North;
@@ -24,12 +24,12 @@ namespace MarsRover{
                 case "E":
                     return Direction.East;
                 default:
-                    Debug.WriteLine("Invalid direction string");
+                    LogManager.LogDebug("Invalid direction string");
                     throw new Exception("Invalid direction string");
             }
         }
 
-        public static string DirectionToString(Direction d){
+        public static string EnumToString(Direction d){
             switch(d){
                 case Direction.North:
                     return "N";
@@ -40,7 +40,7 @@ namespace MarsRover{
                 case Direction.East:
                     return "E";
                 default:
-                    Debug.WriteLine("Invalid direction enum");
+                    LogManager.LogDebug("Invalid direction enum");
                     throw new Exception("Invalid direction enum");
             }
         }
