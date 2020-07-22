@@ -24,12 +24,12 @@ interface ILogger{
 
 public class ConsoleLogger : ILogger{
     public void LogString(string message){
-        Debug.WriteLine(message);
+        Console.WriteLine(message);
     }
 }
 
 public class DebugLogger : ILogger{
     public void LogString(string message){
-        Console.WriteLine(message);
+        Debug.WriteLine(message);
     }
 }
