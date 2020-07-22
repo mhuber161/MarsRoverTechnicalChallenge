@@ -14,6 +14,8 @@ dotnet test
 
 To run program with a user-defined input file (Example files located in MarsRover.Tests/TestInputFiles):
 
+cd MarsRover
+
 dotnet run -- --file <filepath>
 
 ### Assumptions/Bad input handling
