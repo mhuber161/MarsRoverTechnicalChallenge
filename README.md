@@ -16,7 +16,7 @@ To run program with a user-defined input file (Example files located in MarsRove
 
 cd MarsRover
 
-dotnet run -- --file <filepath>
+dotnet run -- --file \<filepath\>
 
 ### Assumptions/Bad input handling
 - Rovers are assumed to not have to deal with collision with each other, i.e. multiple rovers can be in the same spot.
