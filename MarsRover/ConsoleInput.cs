@@ -16,7 +16,8 @@ namespace MarsRover{
                         if( i + 1 == args.Length){
                             throw new Exception("No file specified");
                         }
-                        string output = MarsRoverDataProcessor.ProcessRoverFile(args[i+1]);
+                        MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+                        string output = processor.ProcessRoverFile(args[i+1]);
                         Console.WriteLine(output);
                     }
                     catch(Exception e){

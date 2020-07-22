@@ -14,7 +14,8 @@ namespace MarsRover.Tests
         [Fact]
         public void BasicTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "Basic");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "Basic");
 
             Assert.Equal("1 3 N\n5 1 E", output);
 
@@ -24,7 +25,8 @@ namespace MarsRover.Tests
         [Fact]
         public void BlankFirstLineTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "BlankFirstLine");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "BlankFirstLine");
 
             Assert.Equal("1 3 N\n5 1 E", output);
 
@@ -34,7 +36,8 @@ namespace MarsRover.Tests
         [Fact]
         public void CirclePlateauTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "CirclePlateau");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "CirclePlateau");
 
             Assert.Equal("0 0 S", output);
 
@@ -44,7 +47,8 @@ namespace MarsRover.Tests
         [Fact]
         public void SingleRowPlateauTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "SingleRowPlateau");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "SingleRowPlateau");
 
             Assert.Equal("10 0 E", output);
 
@@ -58,7 +62,8 @@ namespace MarsRover.Tests
         [InlineData("EmptyFile")]
         public void InvalidFormatTest(string fileName)
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + fileName);
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + fileName);
 
             Assert.Equal("", output);
 
@@ -68,7 +73,8 @@ namespace MarsRover.Tests
         [Fact]
         public void OneRoverManyCommandsTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "OneRoverManyCommands");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "OneRoverManyCommands");
 
             Assert.Equal("0 0 N", output);
 
@@ -78,7 +84,8 @@ namespace MarsRover.Tests
         [Fact]
         public void OutOfBoundsTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "OutOfBounds");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "OutOfBounds");
 
             Assert.Equal("", output);
 
@@ -88,7 +95,8 @@ namespace MarsRover.Tests
         [Fact]
         public void SingleSpotTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "SingleSpot");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "SingleSpot");
 
             Assert.Equal("0 0 S", output);
 
@@ -98,7 +106,8 @@ namespace MarsRover.Tests
         [Fact]
         public void ManyRoversTest()
         {
-            string output = MarsRoverDataProcessor.ProcessRoverFile(testsFolderPath + "ManyRovers");
+            MarsRoverDataProcessor processor = new MarsRoverDataProcessor();
+            string output = processor.ProcessRoverFile(testsFolderPath + "ManyRovers");
 
             string correctOutput = "";
 
